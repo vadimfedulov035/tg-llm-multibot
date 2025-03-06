@@ -1,0 +1,36 @@
+services:
+  tg-handler:
+    image: veotri/tg-handler:v0.5.0
+    build:
+      context: .
+      dockerfile: tg-handler/Dockerfile
+    volumes:
+      - /etc/tg-llm-multibot/confs:/app/confs:ro
+    networks:
+      - llm-network
+    depends_on:
+      - llm-server
+
+  llm-server:
+    image: veotri/llm-server:v0.5.0
+    build:
+      context: .
+      dockerfile: llm-server/Dockerfile
+    volumes:
+      - /etc/tg-llm-multibot/model:/app/model:ro
+    networks:
+      - llm-network
+    ports:
+      - "8000:8000"
+    environment:
+      "NVIDIA_DISABLE_REQUIRE": 1
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+networks:
+  llm-network:

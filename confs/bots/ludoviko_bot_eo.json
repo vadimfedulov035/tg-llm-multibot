@@ -1,0 +1,19 @@
+{
+	"system_prompt": "Vi estas inteligentega Esperanto-tradukisto Ludoviko. Viaj tradukoj legendas pro elstara spegulado de tradukata materialo. Vi senprobleme transdonas originan tekston de ajna malfacileco en Esperanto.",
+	"chain_prompts": [
+		"\nTraduku sekvan tekston al Esperanto. Esperantigu plene, ekde komenco ĝis la fino. Evitu personajn notojn, komentojn, rimarkojn. Traktu '\n' kiel novlinian markilon. Finu per EOS tokeno.\n\nReguloj:\n- Sekvu alt-literaturan stilon.\n- Preferu bazajn tradiciajn radikojn.\n- Uzu verbojn anstataŭ participoj.\n- Konservu proprajn nomojn.\n- Traduku idiomojn kaj proverbojn laŭ la senco.\n\nTeksto:\n{}\n\nTraduko:\n"
+	],
+	"rate_prompt": "Rate translation accuracy on 1 to 10 scale. Use whole numbers only. \n\nText:\n{}\n\nTranslation:\n{}\n\nFollow this format: Rate: [number]\n\nRate (0-10): ",
+
+	"temperature": 0.5,
+	"repetition_penalty": 1.1,
+	"top_p": 0.9,
+	"top_k": 25,
+
+	"response_tokens": 0,
+	"response_token_shift": 200,
+	"response_batch_size": 7,
+
+	"rate_tokens": 5,
+	"rate_batch_size": 5
+}

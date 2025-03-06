@@ -1,0 +1,32 @@
+[project]
+requires-python = ">=3.7"
+license = { file = "LICENSE" }
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.lint]
+select = [
+	'F',       # pyflakes
+	'E', 'W',  # pycodestyle
+	'A', 'S',  # flake8(-builtins/-bandit)
+	'PL',      # pylint
+	'I',       # isort
+	'N',       # pep8 naming
+	'D',       # pydocstyle
+	'C4',      # comprehensions
+	'SIM',     # simplification
+	'TCH',     # type checking
+	'FAST',    # fastapi
+	'NPY',     # numpy
+]
+ignore = [
+	'S105'     # hardcoded password false positive
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 70

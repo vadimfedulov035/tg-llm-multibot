@@ -1,0 +1,13 @@
+{
+	"keysAPI": [
+		"bot1_API_KEY",
+		"bot2_API_KEY"
+	],
+    "admins": ["admin1_id", "admin2_id"],
+	"orders": {
+		"ludoviko_bot": ["/eo"]
+	},
+	"config_path": "./confs/bots",
+	"history_path": "./history.json",
+	"memory_limit": 5
+}
